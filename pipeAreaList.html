@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>监督员管理</title>
+    <link rel="shortcut icon" href="/resource/favicon.ico" />
+    <link rel="bookmark" href="/resource/favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="理工光科">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/resource/css/antd.min.css">
+    <link rel="stylesheet" href="/resource/css/wutos-style.min.css">
+    <link rel="stylesheet" href="/resource/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resource/css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="assets/css/pipeAreaManage.css"> 
+</head> 
+<body>
+    <!--#include virtual="/layout/$layout_index_path.html" -->
+    <app-root></app-root>
+    <div class="page-content-wrapper wutos-system-bg wutos-padding-layout" id="unitListDiv">
+        <nav-tips>
+            <div class="breadcontent" style="display: block;padding-left:12px;">
+                <ul class="page-breadcrumb">
+                    <li class="">
+                        <a class="unclickable">系统管理</a>
+                        <a class="unclickable">消防部门管理</a>
+                        <a class="unclickable">监督员管理</a>
+                    </li>
+                </ul>
+            </div>
+        </nav-tips>
+        <div class="wutos-padding-layout">
+            <div class="wutos-panel-shadow">
+                <div class="wutos-sy-table-search-area" style="width:100%;position: relative">
+                    <span style="font-size:26px;font-weight: 600;position: absolute;right:50%">监督员列表</span>
+
+                    <div class="wutos-input pull-right">
+                        <input autocomplete="off" id="keyWord" name="keyWord" placeholder="请输入..." type="text"
+                            style="width:300px">
+                        <button class="wutos-btn wutos-btn--primary" id="btnSearch" type="button" style="margin:0px 0px 0px 20px"
+                            onclick="PipeSearch()">搜索</button>
+                    </div>
+                </div>
+
+                <div class="wutos-table-list-area">
+                    <table id="pipeAreaList" style="overflow: hidden;"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <script src="/resource/js/bootstrap.js"></script> -->
+    <script src="/resource/js/bootstrap-table.js"></script>
+    <script src="/resource/js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../assets/js/CommonJS.js" ></script>
+    <script src="assets/scripts/PipeAreaManage.js"></script>
+</body>

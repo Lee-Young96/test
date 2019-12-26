@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>协办监督员绑定</title>
+    <link rel="shortcut icon" href="/resource/favicon.ico" />
+    <link rel="bookmark" href="/resource/favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="理工光科">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/resource/css/antd.min.css">
+    <link rel="stylesheet" href="/resource/css/wutos-style.min.css">
+    <link rel="stylesheet" href="/resource/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resource/css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="assets/css/homePipeManage.css">
+</head>
+
+<body>
+    <!--#include virtual="/layout/$layout_index_path.html" -->
+    <app-root></app-root>
+    <div class="page-content-wrapper wutos-system-bg wutos-padding-layout" id="unitListDiv" style="padding-top: 0;padding-bottom:0px">
+        <div class="wutos-panel-shadow" style="height:100%;background-color: #eee;padding-bottom:0px">
+            <div style="height:40px;width:100%;position: relative">
+                <a class="wutos-btn wutos-btn--primary" style="position: absolute;left: 0px;top:5px;"
+                    href="pipeAreaList.html" id="btnBack">返回</a>
+
+                <span style="position: absolute;left: 45%;top:5px;font-size:32px;font-weight: 600;">协办监督员绑定</span>
+            </div>
+
+            <div style="position:relative; width: 100%;height:50px;margin-top:10px;background-color:#fff;border-radius: 5px;padding-top:9px"
+                class="wutos-input">               
+                <span style="font-size: 15px;margin-left:20px">地址&nbsp;&nbsp;&nbsp;区/县</span>
+                <select id="Region" onchange="BindRegion('#Street', this.value)" style="width:100px;padding:0 3px">
+                </select>
+
+                <span style="font-size: 15px;margin-left:20px">街道</span>
+                <select id="Street" style="width:120px;padding:0 3px">
+                </select>
+
+                <span style="font-size: 15px;margin-left: 20px">所属社区</span>
+                <select id="Community" style="width:150px;padding:0 3px">
+                </select>
+
+                <span style="font-size: 15px;margin-left:20px">所属小区</span>
+                <select id="Plot" style="width:200px;padding:0 3px">
+                </select>
+
+                <span style="font-size: 15px;margin-left:20px">是否绑定</span>
+                <select id="DDLSearchType" style="width:80px;padding:0 3px">
+                    <option value="ALL">全部</option>
+                    <option value="HasBind">已绑定</option>
+                    <option value="NoBind">未绑定</option>
+                </select>
+
+                <input autocomplete="off" id="keyWord" name="keyWord" placeholder="请输入..." type="text"
+                    style="width:260px;right: 90px;position: absolute">
+                <button class="wutos-btn wutos-btn--primary" id="btnSearch" type="button"
+                    style="position: absolute;right:20px" onclick="UnitSearch()">搜索</button>
+            </div>
+
+            <div style="width:100%;height: calc(100% - 150px);margin-top: 20px">
+                <div style="height:100%;width:calc(50% - 20px);float:left;background-color:#fff;border-radius: 5px">
+                    <div style="padding-top:7px;height:45px;position: relative;background-color: #2ea2f9;border-top-left-radius: 5px;border-top-right-radius: 5px">
+                        <span
+                            style="font-size: 19px;text-align: center;font-weight:600;margin-left: 15px;color:#fff">已绑定家庭列表</span><button
+                            style="position: absolute;right:20px;background-color: #aaa" class="wutos-btn wutos-btn--primary" type="button"
+                            onclick="PipeOut()">解除绑定</button>
+                    </div>
+
+                    <table id="PipeUnitList" style="overflow: hidden"></table>
+                </div>
+
+                <div style="height:100%;width:calc(50% - 20px);float:right;background-color:#fff;border-radius: 5px">
+                    <div style="padding-top: 7px;height:45px;position: relative;background-color: #aaa;border-top-left-radius: 5px;border-top-right-radius: 5px">
+                        <span style="font-size: 19px;text-align: center;font-weight:600;margin-left: 15px;color:#fff">所有家庭列表</span>
+                        <button style="position: absolute;right:20px;" class="wutos-btn wutos-btn--primary" type="button"
+                            onclick="PipeIn()">绑定</button>
+                    </div>
+
+                    <table id="UnitList" style="overflow: hidden"></table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/resource/js/bootstrap-table.js"></script>
+    <script src="/resource/js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../assets/js/CommonJS.js"></script>
+    <script src="assets/scripts/homeXGBinding.js"></script>
+    <script src="../assets/js/alertNative.js"></script>
+</body>
